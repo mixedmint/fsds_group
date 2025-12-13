@@ -49,7 +49,7 @@ jupyter:
 
 ## Declaration of Authorship {.unnumbered .unlisted}
 
-We, [Deepsick], pledge our honour that the work presented in this assessment is our own. Where information has been derived from other sources, we confirm that this has been indicated in the work. Where a Large Language Model such as ChatGPT has been used we confirm that we have made its contribution to the final submission clear.
+We, Deepsick, pledge our honour that the work presented in this assessment is our own. Where information has been derived from other sources, we confirm that this has been indicated in the work. Where a Large Language Model such as ChatGPT has been used we confirm that we have made its contribution to the final submission clear.
 
 Date: 13/12/2025
 
@@ -99,7 +99,47 @@ Notably, we did not exclude hosts with very large portfolios (e.g. host listings
 After cleaning, the final analytical dataset contains 47,971 listings across 26 variables. While some uncertainty remains—particularly due to the absence of official administrative records—the resulting dataset provides a robust and policy-relevant representation of Airbnb activity in London, suitable for assessing scale, spatial concentration, and the role of professional hosts.
 
 ```{python}
+#| echo: false
+#| output: false
+#| warning: false
+
+#2.1 Configuring the Environment
+import sys
+import subprocess
+import pkg_resources
+
+# Automatically detecting missing libraries and installs them
+pip_cmd = [sys.executable, '-m', 'pip', 'install']
+pkgs = list([
+    'pandas', 
+    'numpy',
+    'pyyaml',
+    'seaborn', 
+    'shapely',
+    'geopandas', 
+    'matplotlib',
+    'contextily',
+    'mapclassify', 
+    'matplotlib_scalebar', 
+])
+
+# Checking and installing missing libraries
+full_cmd = pip_cmd + pkgs
+
+try:
+   subprocess.check_call(full_cmd + ['--disable-pip-version-check'])
+except subprocess.CalledProcessError:
+   print("Standard install failed. Trying with --break-system-packages...")
+   try:
+      subprocess.check_call(full_cmd + ['--break-system-packages'])
+   except subprocess.CalledProcessError as e:
+      print(f"Critical Warning: Could not install packages. Error: {e}")
+
+```
+
+```{python}
 #| echo: False
+
 #2.1 Loading the Dataset
 #library packages
 import numpy as np
@@ -116,6 +156,7 @@ from pathlib import Path
 from functools import wraps
 from shapely.geometry import Point
 from matplotlib_scalebar.scalebar import ScaleBar
+
 ```
 
 ```{python}
@@ -646,7 +687,7 @@ print(f"Number of houses that meet the definition of misused propertise: {len(df
 print(f"Proportion of total housing: {share_misuses:.2f}%")
 ```
 
-Our analysis shows that **25.86%** of Airbnb listings in London are classified as misuse, which represents a significant portion of the market. The next step is to examine the spatial distribution of these properties to understand their impacts on the housing market.
+Our analysis shows that **12407** Airbnb listings in London are classified as misuse, which represents a significant portion of the market. The next step is to examine the spatial distribution of these properties to understand their impacts on the housing market.
 
 ### 4.3 The distribution patterns of misused properties
 
@@ -757,7 +798,7 @@ manual_offsets = {
     'Camden': (10, 40),             
     'Islington': (50, 50),          
     'Westminster': (30, 30),      
-    'Hammersmith and Fulham': (-90, 40),    
+    'Hammersmith and Fulham': (-30, 50),    
 }
 
 # Adding labeling manually and loopingly (from Google Gemini's suggestions in my initial draft)
@@ -935,12 +976,11 @@ target_properties = df_potential_pros[df_potential_pros['NAME'].isin(target_boro
 total_target_affected = len(target_properties)
 target_n = target_properties['NAME'].value_counts().reset_index()
 target_n.columns = ['Borough', 'Count']
-total_london_pros = len(df_potential_pros)
 target_n_total = target_n['Count'].sum()
-concentration_ratio = (target_n_total / total_london_pros) * 100
+concentration_ratio = (target_n_total / n_misuses) * 100
 
 print(f"Total number of properties affected by the opposition proposal in the target area: {total_target_affected}")
-print(f"\nThese five districts have concentrated {concentration_ratio:.1f}% of the professional landlord houses in London.\n")
+print(f"\nThese five districts have concentrated {concentration_ratio:.1f}% of the misused Airbnb listings in London.\n")
 
 # 3. Visualization
 plt.figure(figsize=(12,8))
@@ -981,7 +1021,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-Based on our targeted strategy, **10,145** properties would be affected. Crucially, these five boroughs alone account for **47.8%** of all misuse properties in London. This concentration confirms the rationality of our targeted approach: **we can address the bulk of the "out of control" phenomenon by concentrating resources on just five boroughs**, maximizing impact while minimizing administrative costs.
+Based on our targeted strategy, **10,145** properties would be affected. Crucially, these five boroughs alone account for **81.8%** of all misuse properties in London. This concentration confirms the rationality of our targeted approach: **we can address the bulk of the "out of control" phenomenon by concentrating resources on just five boroughs**, maximizing impact while minimizing administrative costs.
 
 ## 7 What are the likely pros and cons of the opposition’s proposal? 
 If the Mayor were to accept the opposition’s proposal to require professional landlords to register their Airbnb properties and face higher Council Tax rates, the policy would bring both opportunities and risks. Its impacts differ for the Mayor, residents, and the city as a whole.
