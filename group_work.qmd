@@ -1018,7 +1018,7 @@ Crucially, our findings suggest that housing harm is not evenly distributed acro
 ### 8.2 Social Mobility
 From a social mobility perspective, Airbnb can **provide flexible income opportunities for ordinary residents**. Hosting allows homeowners to earn additional income by sharing space they already have, often with minimal upfront costs. For many middle- or lower-income households, this income can help cover mortgages, rent, or rising living expenses.
 
-The low barriers to entry mean that participation is not limited to wealthy investors, but is accessible to people from diverse backgrounds. Airbnb itself reports that in 2023, hosts in the United States earned **$22 billion** in supplemental income, much of which was used to meet essential household costs [@airbnb_hosts_2023]. While this figure is not directly transferable to London, it illustrates the broader potential of home-sharing to support household resilience.
+The low barriers to entry mean that participation is not limited to wealthy investors, but is accessible to people from diverse backgrounds. Airbnb itself reports that in 2023, hosts in the United States earned **$22 billion** in supplemental income, much of which was used to meet essential household costs [@airbnbnewsroom_hosts_2023]. While this figure is not directly transferable to London, it illustrates the broader potential of home-sharing to support household resilience.
 
 {{< pagebreak >}}
 
