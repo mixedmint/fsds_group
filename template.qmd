@@ -49,15 +49,15 @@ jupyter:
 
 ## Declaration of Authorship {.unnumbered .unlisted}
 
-We, [insert your group's names], pledge our honour that the work presented in this assessment is our own. Where information has been derived from other sources, we confirm that this has been indicated in the work. Where a Large Language Model such as ChatGPT has been used we confirm that we have made its contribution to the final submission clear.
+We, [Deepsick], pledge our honour that the work presented in this assessment is our own. Where information has been derived from other sources, we confirm that this has been indicated in the work. Where a Large Language Model such as ChatGPT has been used we confirm that we have made its contribution to the final submission clear.
 
-Date:
+Date: 13/12/2025
 
-Student Numbers: 
+Student Numbers: 25039479, 25073913, 25206098, 24143973
 
 ## Priorities for Feedback
 
-Are there any areas on which you would appreciate more detailed feedback if we're able to offer it?
+We would particularly value feedback on the logical flow of the report. Specifically, we would like to know if the structure is coherent and if the research question is comprehensively addressed.
 
 {{< pagebreak >}}
 
