@@ -103,7 +103,7 @@ After cleaning, the final analytical dataset contains 47,971 listings across 26 
 #| output: false
 #| warning: false
 
-#2.1 Configuring the Environment
+# Configuring the Environment
 import sys
 import subprocess
 import pkg_resources
@@ -141,9 +141,9 @@ except subprocess.CalledProcessError:
 #| echo: false
 #| output: false
 
+# Auto-downloading bio.bib and .csl -I asked AI how to do this
 import os
-
-# 1. download bio.bib -I asked AI how to do this
+# 1. download bio.bib 
 bib_content = """
 @article{gyodi_spatial_2024,
 	title = {The spatial patterns of {Airbnb} offers, hotels and attractions: are professional hosts taking over cities?},
