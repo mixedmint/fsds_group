@@ -141,47 +141,41 @@ except subprocess.CalledProcessError:
 #| echo: false
 #| output: false
 
-# Auto-downloading bio.bib and .csl -I asked AI how to do this
 import os
-# 1. download bio.bib 
+
+# Auto-downloading bio.bib
+# I have cleaned this data to ensure no local paths or Chinese characters cause render errors.
+
 bib_content = """
 @article{gyodi_spatial_2024,
 	title = {The spatial patterns of {Airbnb} offers, hotels and attractions: are professional hosts taking over cities?},
 	volume = {27},
 	issn = {1368-3500},
-	shorttitle = {The spatial patterns of {Airbnb} offers, hotels and attractions},
 	url = {https://doi.org/10.1080/13683500.2023.2239428},
 	doi = {10.1080/13683500.2023.2239428},
-	abstract = {Airbnb has created a significant incentive to invest in real-estate with the purpose of short-term accommodation provision in touristic cities. The robust growth of Airbnb supply has been accompanied with an increasing professionalization of the platform, contributing to such challenges as overtourism and gentrification. The main aim of this analysis is to examine the spatial characteristics of Airbnb supply in Barcelona, Berlin and London, focussing on the differences between offers that belong to non-professional and professional hosts. Based on Exploratory Spatial Data Analysis techniques the study demonstrates that listings that belong to professional hosts are more concentrated in city centres, and are more influenced by the location of tourist attractions and hotels than non-professional offers. On the other hand, non-professional listings facilitate a spatially more diverse accommodation supply. The results suggest that professional offers may contribute more to the negative effects of Airbnb on local residents.},
 	number = {17},
 	urldate = {2025-11-28},
 	journal = {Current Issues in Tourism},
 	author = {Gyódi, Kristóf},
-	month = sep,
+	month = {9},
 	year = {2024},
-	note = {Publisher: Routledge
-\_eprint: https://doi.org/10.1080/13683500.2023.2239428},
-	pages = {2757--2782},
-	file = {Full Text PDF:/Users/cecile/Zotero/storage/XD524Z4F/Gyódi - 2024 - The spatial patterns of Airbnb offers, hotels and attractions are professional hosts taking over ci.pdf:application/pdf},
+	pages = {2757--2782}
 }
 
 @article{ferreri_platform_2018,
 	title = {Platform economies and urban planning: {Airbnb} and regulated deregulation in {London}},
 	volume = {55},
 	issn = {0042-0980, 1360-063X},
-	shorttitle = {Platform economies and urban planning},
 	url = {https://journals.sagepub.com/doi/10.1177/0042098017751982},
 	doi = {10.1177/0042098017751982},
-	abstract = {The ‘sharing economy’ has become a new buzzword in urban life as digital technology companies set up online platforms to link together people and un- or underutilised assets with those seeking to rent them for short periods of time. While cloaked under the rhetoric of ‘sharing’, the exchanges they foster are usually profit-driven. These economic activities are having profound impacts on urban environments as they disrupt traditional forms of hospitality, transport, service industry and housing. While critical debates have focused on the challenges that sharing economy activities bring to existing labour and economic practices, it is necessary to acknowledge that they also have increasingly significant impacts on planning policy and urban governance. Using the case of Airbnb in London, this article looks at how these sharing or platform economy companies are involved in encouraging governments to change existing regulations, in this case by deregulating short-term letting. This has important implications for planning enforcement. We examine how the challenges around obtaining data to enforce new regulations are being addressed by local councils who struggle to balance corporate interests with public good. Finally, we address proposals for using algorithms and big data as means of urban governance and argue that the schism between regulation and enforcement is opening up new digitally mediated spaces of informal practices in cities.},
 	language = {en},
 	number = {15},
 	urldate = {2025-12-02},
 	journal = {Urban Studies},
 	author = {Ferreri, Mara and Sanyal, Romola},
-	month = nov,
+	month = {11},
 	year = {2018},
-	pages = {3353--3368},
-	file = {已接受版本:/Users/cecile/Zotero/storage/PQDMKRNL/Ferreri和Sanyal - 2018 - Platform economies and urban planning Airbnb and regulated deregulation in London.pdf:application/pdf},
+	pages = {3353--3368}
 }
 
 @article{shabrina_airbnb_2022,
@@ -190,50 +184,29 @@ bib_content = """
 	issn = {0042-0980, 1360-063X},
 	url = {https://journals.sagepub.com/doi/10.1177/0042098020970865},
 	doi = {10.1177/0042098020970865},
-	abstract = {This article identifies proxies which account for the impacts that the Airbnb platform is having on housing in Greater London. We identify these by analysing the relationships between possible Airbnb misuse and the attributes of housing in the same locations. We assume misuse when listings of entire properties within the Airbnb platform do not conform with local regulations and where hosts who offer such housing have multiple listings. In particular, we examine (1) the dwelling type based on building typology; (2) the type of housing tenure, whether it is owned or rented; and (3) the spatial distribution of changes in rent payable. Three important findings emerge from our analysis. First, based on 2018 data, we estimate that more than 2\% of all properties in London, and up to 7\% in some local areas are being misused through Airbnb as short-term holiday rentals. Second, the location of these particular Airbnb rentals is negatively correlated with the diversity of dwelling types and positively correlated with dwelling type such as an apartment (or flat) in areas of high private rental stock. Last, we show that a 100\% increase in the density of possible Airbnb misuse can be associated with up to an 8\% increase in unit rental price per-bedroom per-week, an equivalent to up to an average of £90 price increase per year. Finally, we discuss how this type of analysis can help build instruments to inform policies associated with the platform economy in relation to increasing polarisation in the London housing market.},
 	language = {en},
 	number = {1},
 	urldate = {2025-12-02},
 	journal = {Urban Studies},
 	author = {Shabrina, Zahratu and Arcaute, Elsa and Batty, Michael},
-	month = jan,
+	month = {1},
 	year = {2022},
-	pages = {197--221},
-	file = {全文:/Users/cecile/Zotero/storage/PEJFIZDU/Shabrina 等 - 2022 - Airbnb and its potential impact on the London housing market.pdf:application/pdf},
-}
-
-@article{wachsmuth_airbnb_2018,
-	title = {Airbnb and the rent gap: {Gentrification} through the sharing economy},
-	volume = {50},
-	issn = {0308-518X, 1472-3409},
-	shorttitle = {Airbnb and the rent gap},
-	url = {https://journals.sagepub.com/doi/10.1177/0308518X18778038},
-	doi = {10.1177/0308518X18778038},
-	abstract = {Airbnb and other short-term rental services are a topic of increasing concern for urban researchers, policymakers, and activists, because of the fear that short-term rentals are facilitating gentrification. This article presents a framework for analyzing the relationship between short-term rentals and gentrification, an exploratory case study of New York City, and an agenda for future research. We argue that Airbnb has introduced a new potential revenue flow into housing markets which is systematic but geographically uneven, creating a new form of rent gap in culturally desirable and internationally recognizable neighborhoods. This rent gap can emerge quickly—in advance of any declining property income—and requires minimal new capital to be exploited by a range of different housing actors, from developers to landlords, tenants, and homeowners. Performing spatial analysis on three years of Airbnb activity in New York City, we measure new capital flows into the short-term rental market, identify neighborhoods whose housing markets have already been significantly impacted by short term, identify neighborhoods which are increasingly under threat of Airbnb-induced gentrification, and estimate the amount of rental housing lost to Airbnb. Finally, we conclude by offering a research agenda on gentrification and the sharing economy.},
-	language = {en},
-	number = {6},
-	urldate = {2025-12-10},
-	journal = {Environment and Planning A: Economy and Space},
-	author = {Wachsmuth, David and Weisler, Alexander},
-	month = sep,
-	year = {2018},
-	pages = {1147--1170},
-	file = {全文:/Users/cecile/Zotero/storage/GP8P5JSI/Wachsmuth和Weisler - 2018 - Airbnb and the rent gap Gentrification through the sharing economy.pdf:application/pdf},
+	pages = {197--221}
 }
 
 @misc{airbnbnewsroom_hosts_2023,
 	title = {Hosts in the {US} earned \$22 billion in supplemental income last year},
 	url = {https://news.airbnb.com/hosts-in-the-us-earned-22-billion-in-supplemental-income-last-year/},
-	abstract = {The typical Host in the US earned approximately \$14,000 in 2022 to help cover the rising cost of living.},
 	language = {en-US},
 	urldate = {2025-12-13},
 	journal = {Airbnb Newsroom},
 	author = {{AirbnbNewsroom}},
-	month = mar,
-	year = {2023},
+	month = {3},
+	year = {2023}
 }
 """
 
+# Force UTF-8 encoding to be safe
 with open("bio.bib", "w", encoding="utf-8") as f:
     f.write(bib_content)
 
