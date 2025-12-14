@@ -80,7 +80,7 @@ There is a conflict between the commercialization of home-sharing and the origin
 
 **Data sources**
 
-This analysis is based on data from **Inside Airbnb**, a widely used open dataset derived from publicly available information on the Airbnb platform. Although the data are not produced by an official government body, they are extensively used in academic research and policy analysis to examine the impacts of short-term rentals in cities, including London. The dataset is maintained by the Inside Airbnb Network, a mission-driven initiative that seeks to facilitate transparent public discussion about short-term rentals and their effects on local communities. Its open methodology and consistent use across peer-reviewed studies support its credibility as a data source.
+This analysis is based on data from **Inside Airbnb**, a widely used open dataset derived from publicly available information on the Airbnb platform. Although the data are not produced by an official government body, they are extensively used in academic research and policy analysis. The dataset is maintained by the Inside Airbnb Network, a mission-driven initiative that seeks to facilitate transparent public discussion about short-term rentals and their effects on local communities. Its open methodology and consistent use across peer-reviewed studies support its credibility as a data source.
 
 **Scope and coverage of the dataset**
 
@@ -687,8 +687,6 @@ print(f"Number of houses that meet the definition of misused propertise: {len(df
 print(f"Proportion of total housing: {share_misuses:.2f}%")
 ```
 
-Our analysis shows that **12407** Airbnb listings in London are classified as misuse, which represents a significant portion of the market. The next step is to examine the spatial distribution of these properties to understand their impacts on the housing market.
-
 ### 4.3 The distribution patterns of misused properties
 
 ```{python}
@@ -1024,21 +1022,20 @@ plt.show()
 Based on our targeted strategy, **10,145** properties would be affected. Crucially, these five boroughs alone account for **81.8%** of all misuse properties in London. This concentration confirms the rationality of our targeted approach: **we can address the bulk of the "out of control" phenomenon by concentrating resources on just five boroughs**, maximizing impact while minimizing administrative costs.
 
 ## 7 What are the likely pros and cons of the opposition’s proposal? 
-If the Mayor were to accept the opposition’s proposal to require professional landlords to register their Airbnb properties and face higher Council Tax rates, the policy would bring both opportunities and risks. Its impacts differ for the Mayor, residents, and the city as a whole.
 
 ### 7.1 For the Mayor
-For the Mayor, **the proposal presents a strong opportunity to demonstrate targeted and evidence-based leadership**. By focusing on City of London, Westminster, Kensington and Chelsea, Camden, and Hackney, the policy directly addresses areas where Airbnb misuse is most concentrated. These five boroughs alone account for 81.8% of all misused listings in London, despite representing only a small share of the city’s total area. Acting in these locations allows the Mayor to tackle the core of the problem rather than imposing citywide restrictions that may appear excessive.
+The proposal offers the Mayor a chance to **demonstrate targeted, evidence-based leadership**. By focusing on the five "target boroughs“, the policy directly addresses areas containing 81.8% of London's misused listings, tackling the core problem without imposing excessive citywide restrictions.
 
-Politically, the proposal is also defensible because it affects a narrow and clearly defined group. Our analysis shows that only around 4.8% of hosts qualify as professional landlords, meaning the policy would leave more than 95% of hosts unaffected. **This strengthens the Mayor’s ability to frame the intervention as proportionate and fair**.
+Politically, the proposal is defensible as it targets a narrow and clearly defined group. With only 4.8% of hosts qualifying as professional landlords, over 95% remain unaffected, framing the intervention as proportionate.
 
 However, risks remain. The targeted boroughs are highly visible, tourist-intensive areas, and policy changes there are more likely to attract media scrutiny. **Critics may still portray the proposal as harmful to entrepreneurship or tourism, particularly if its purpose is not communicated clearly**. The Mayor would therefore face reputational risks if enforcement appears inconsistent or if messaging fails to emphasise the limited scope of the policy.
 
 ### 7.2 For the Residents
-For residents, especially in the 5 targeted boroughs, the benefits are substantial. These areas experience the highest levels of housing loss linked to Airbnb misuse, with City of London showing particularly severe displacement of residential stock. By discouraging professional short-term letting, the policy can help **return a meaningful number of properties to the long-term housing market, easing pressure on rents and improving residential stability**.
+For residents, especially in targeted boroughs, benefits are substantial. These areas experience the highest housing loss linked to Airbnb misuse. By discouraging professional short-term letting, the policy can help **return a meaningful number of properties to the long-term housing market, easing pressure on rents and improving residential stability**.
 
 Residents may also benefit from **reduced neighbourhood disruption**. Lower concentrations of short-term visitors can enhance safety, reduce nuisance, and strengthen community cohesion in areas that currently experience high turnover.
 
-However, there is a risk of **administrative spillover affecting genuine home-sharers**. Even if the policy targets professional landlords, casual hosts (e.g., those renting a spare room) might face confusion or increased bureaucracy if the verification process is complex. They may fear inadvertently breaching rules, leading to the result that responsible citizens stop hosting due to uncertainty. Therefore, clear communication and a simplified exemption process for single-listing hosts are vital to prevent backlash.
+However, **administrative spillover risks affect genuine home-sharers**. Casual hosts (e.g., those renting a spare room) might face confusion or increased bureaucracy if the verification process is complex. They may fear inadvertently breaching rules, leading to the result that responsible citizens stop hosting due to uncertainty. Therefore, clear communication and a simplified exemption process for single-listing hosts are vital to prevent backlash.
 
 ### 7.3 For the City
 At the city level, the key advantage lies in **stabilising housing markets without undermining London’s overall tourism economy**. By concentrating on boroughs where misuse is most intense, the policy avoids unnecessary intervention in low-pressure areas. 
@@ -1046,7 +1043,7 @@ At the city level, the key advantage lies in **stabilising housing markets witho
 Conversely, a reduction in Airbnb supply may **temporarily affect the tourism market** by raising accommodation prices. However, this may redirect demand toward regulated hotels, which contribute more reliably to tax revenues or encourage visitors to stay in outer areas, supporting broader urban goals. With careful implementation, the policy can balance a vibrant visitor economy while prioritising housing for Londoners.
 
 ## 8 Can the story be reframed as a positive one about social mobility or housing opportunity?
-While our analysis shows that parts of London’s Airbnb market are partially out of control, this does not mean that Airbnb as a whole is inherently harmful. When properly regulated, the platform can still support housing opportunity and social mobility, particularly for ordinary households.
+-Yes
 
 ### 8.1 Housing Opportunity
 Our data show that around 95% of Airbnb hosts in London are not professional landlords, but casual home-sharers. This aligns closely with Airbnb’s original “sharing economy” model, in which underused housing space is temporarily made available rather than permanently removed from the residential market. In this sense, Airbnb can **improve the efficiency of housing use** by allowing spare rooms or temporarily vacant homes to be utilised.
